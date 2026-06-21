@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Primary teal */
+    --primary: 0.44 0.102 181;
+    --primary-foreground: 1 0 0;
+
+    /* Page background light */
+    --background: 0.968 0.005 210;
+    --foreground: 0.15 0.02 250;
+
+    /* Card white */
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.02 250;
+
+    /* Popover */
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.02 250;
+
+    /* Secondary */
+    --secondary: 0.92 0.02 181;
+    --secondary-foreground: 0.44 0.102 181;
+
+    /* Muted */
+    --muted: 0.94 0.008 220;
+    --muted-foreground: 0.5 0.02 230;
+
+    /* Accent orange */
+    --accent: 0.65 0.18 39;
+    --accent-foreground: 1 0 0;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border / input */
+    --border: 0.88 0.015 220;
+    --input: 0.88 0.015 220;
+    --ring: 0.44 0.102 181;
+
+    /* Charts */
+    --chart-1: 0.65 0.18 39;
+    --chart-2: 0.44 0.102 181;
+    --chart-3: 0.72 0.14 145;
+    --chart-4: 0.8 0.16 75;
+    --chart-5: 0.6 0.14 260;
+
+    /* Sidebar */
+    --sidebar: 0.44 0.102 181;
+    --sidebar-foreground: 1 0 0;
+    --sidebar-primary: 0.65 0.18 39;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.38 0.095 181;
+    --sidebar-accent-foreground: 1 0 0;
+    --sidebar-border: 0.38 0.09 181;
+    --sidebar-ring: 0.65 0.18 39;
+
+    /* Custom Outscape tokens */
+    --teal-primary: 0.44 0.102 181;
+    --teal-dark: 0.38 0.09 181;
+    --teal-hero: 0.52 0.115 181;
+    --teal-hero-light: 0.6 0.12 181;
+    --orange-accent: 0.65 0.18 39;
+    --yellow-accent: 0.85 0.16 88;
+    --coral-blob: 0.62 0.2 28;
+
+    /* Category tile colors */
+    --cat-green: 0.7 0.14 148;
+    --cat-orange: 0.7 0.16 52;
+    --cat-teal: 0.68 0.12 183;
+    --cat-yellow: 0.8 0.16 88;
+    --cat-blue: 0.65 0.13 244;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
+  }
+}
+@layer utilities {
+  .animate-smooth-fade {
+    animation: fade-up 0.5s ease-out;
+  }
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

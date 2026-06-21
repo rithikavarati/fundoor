@@ -1,0 +1,72 @@
+type UserPublic = 
+ record {
+   createdAt: int;
+   email: text;
+   firstName: text;
+   id: UserId;
+   lastName: text;
+ };
+type UserId = nat;
+type UpdateUserResult = 
+ variant {
+   err: text;
+   ok: UserPublic;
+ };
+type GetMeResult = 
+ variant {
+   err: text;
+   ok: UserPublic;
+ };
+type FavoriteResult = 
+ variant {
+   err: text;
+   ok;
+ };
+type DirectResetPasswordResult = 
+ variant {
+   err: text;
+   ok;
+ };
+type AuthResult = 
+ variant {
+   err: text;
+   ok: UserPublic;
+ };
+type Activity = 
+ record {
+   category: text;
+   description: text;
+   eventDate: opt text;
+   eventDateEnd: opt text;
+   id: nat;
+   imageUrl: text;
+   location: text;
+   name: text;
+   rating: float64;
+   tags: vec text;
+   websiteUrl: text;
+ };
+service : {
+  addFavorite: (activityId: nat) -> (FavoriteResult);
+  forgotPassword: (email: text, newPassword: text, confirmPassword: text) ->
+   (DirectResetPasswordResult);
+  getActivities: () -> (vec Activity) query;
+  getActivitiesByCityAndState: (city: text, state: text) ->
+   (vec Activity) query;
+  getActivitiesByCityStateAndCategory: (city: text, state: text, category:
+   text) -> (vec Activity) query;
+  getActivity: (id: nat) -> (opt Activity) query;
+  getByCategory: (category: text) -> (vec Activity) query;
+  getFavorites: () -> (vec nat) query;
+  getMe: () -> (GetMeResult) query;
+  getWeekendEventsByCityAndState: (city: text, state: text, currentDate:
+   opt text) -> (vec Activity) query;
+  login: (email: text, password: text) -> (AuthResult);
+  logout: () -> ();
+  register: (firstName: text, lastName: text, email: text, password: 
+   text) -> (AuthResult);
+  removeFavorite: (activityId: nat) -> (FavoriteResult);
+  searchActivities: (searchQuery: text) -> (vec Activity) query;
+  updateUser: (firstName: text, lastName: text, email: text) ->
+   (UpdateUserResult);
+}

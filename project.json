@@ -1,0 +1,22 @@
+{
+  "overview": "FunDoor is a kids' activity discovery app with city and state search, category tabs, activity cards with favorites, and user login with server-side favorites persistence.",
+  "features": [
+    "Search kids' activities by city and state",
+    "Browse by category tabs: All, Theme Parks, Parks, Museums, Weekend Activities, Favorites",
+    "Activity cards with images, ratings, and website links",
+    "Heart/favorite toggle on each activity card",
+    "User registration and login with email and password",
+    "Server-side favorites that sync across devices",
+    "Guest favorites in localStorage that merge on login"
+  ],
+  "category": "activity-discovery",
+  "tags": [
+    "kids",
+    "family",
+    "activities",
+    "search",
+    "favorites",
+    "auth"
+  ],
+  "last_updated": "2026-06-12T19:56:46.947Z"
+}

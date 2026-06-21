@@ -1,0 +1,61 @@
+// Version: 1.0.0
+type Activity__913997561 =
+  {
+    category : Text;
+    description : Text;
+    eventDate : ?Text;
+    eventDateEnd : ?Text;
+    id : Nat;
+    imageUrl : Text;
+    location : Text;
+    name : Text;
+    rating : Float;
+    tags : [Text];
+    websiteUrl : Text
+  };
+type Data__80296667<K, V> =
+  {var count : Nat__1040412405; kvs : [var ?(K, V)]};
+type Internal__41346355<K, V> =
+  {children : [var ?Node__1000929467<K, V>]; data : Data__80296667<K, V>};
+type Leaf__712614010<K, V> = {data : Data__80296667<K, V>};
+type List__529703492<T> =
+  {
+    var blockIndex : Nat__1040412405;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__1040412405
+  };
+type List__560604548<T> = List__529703492<T>;
+type Nat__1040412405 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__1000929467<K, V> =
+  {#internal : Internal__41346355<K, V>; #leaf : Leaf__712614010<K, V>};
+type UserId__911210446 = Nat;
+type User__455962502 =
+  {
+    createdAt : Int;
+    email : Text;
+    firstName : Text;
+    id : UserId__911210446;
+    lastName : Text;
+    passwordHash : Text
+  };
+actor {
+  stable activities :
+    {
+      var root : Node__1000929467<Nat, Activity__913997561>;
+      var size : Nat__1040412405
+    };
+  stable authCounter : {var nextUserId : Nat};
+  stable sessions :
+    {var root : Node__1000929467<Principal, Nat>; var size : Nat__1040412405};
+  stable userFavorites :
+    {
+      var root : Node__1000929467<Nat, List__560604548<Nat>>;
+      var size : Nat__1040412405
+    };
+  stable users :
+    {
+      var root : Node__1000929467<Nat, User__455962502>;
+      var size : Nat__1040412405
+    }
+};
