@@ -1,4 +1,4 @@
-# 🎉 Fundoor
+# 🎉 FunDoor
 
 Fundoor is an AI-native, decentralized activity discovery platform built with Caffeine AI and inspired by the challenge of finding fun experiences for families and kids.
 
